@@ -8,6 +8,10 @@ namespace Impl
 
 inline bool isValidComponentForVehicleModel(int vehicleModel, int componentId)
 {
+	if(vehicleModel < 400 || vehicleModel > 611){
+		return false;
+	}
+	
 	// * This is a bit array of all the valid mods (-1000) for all vehicles (-400)
 	// * EXCEPT for vehicle 576 (Tornado), which has just TWO extra mods on it,
 	// * that should spill over in to an extra cell of data (requiring an extra
