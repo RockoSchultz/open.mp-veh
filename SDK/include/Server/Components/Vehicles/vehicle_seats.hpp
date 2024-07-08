@@ -14,7 +14,12 @@ inline uint8_t getVehiclePassengerSeats(int model)
 		return 255;
 	}
 
-	static const StaticArray<uint8_t, MAX_VEHICLE_MODELS> allSeats = {
+	if (model < 400 || model > 611)
+	{
+		return 10; // Valor predeterminado
+	}
+
+	static const StaticArray<uint8_t, 212> allSeats = {
 		3, // 400 - landstal
 		1, // 401 - bravura
 		1, // 402 - buffalo
